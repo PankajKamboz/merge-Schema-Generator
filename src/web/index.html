@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schema Merger Tool</title>
+  <style>
+    textarea { width: 45%; height: 300px; }
+    #output { width: 92%; height: 300px; }
+  </style>
+</head>
+<body>
+  <h2>Schema Merger Tool (@graph based)</h2>
+
+  <textarea id="schema1" placeholder="Paste Schema 1"></textarea>
+  <textarea id="schema2" placeholder="Paste Schema 2"></textarea>
+  <br><br>
+  <button onclick="merge()">Merge Schemas</button>
+  <br><br>
+  <textarea id="output" placeholder="Merged Schema Output"></textarea>
+
+  <script type="module">
+    import { mergeSchemas } from '../src/merger.js';
+
+    window.merge = function () {
+      try {
+        const s1 = JSON.parse(document.getElementById('schema1').value);
+        const s2 = JSON.parse(document.getElementById('schema2').value);
+
+        const result = mergeSchemas([s1, s2]);
+        document.getElementById('output').value = result;
+      } catch (e) {
+        alert("Invalid JSON: " + e.message);
+      }
+    }
+  </script>
+</body>
+</html>
