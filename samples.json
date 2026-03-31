@@ -1,0 +1,21 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "AI Plugin Builder"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes!"
+        }
+      }
+    ]
+  }
+]
